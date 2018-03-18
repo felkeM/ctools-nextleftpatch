@@ -1,0 +1,22 @@
+diff --git a/includes/css.inc b/includes/css.inc
+index 83fe1c3..fb9345e 100644
+--- a/includes/css.inc
++++ b/includes/css.inc
+@@ -162,7 +162,7 @@ function ctools_css_cache($css, $filter = TRUE) {
+   }
+ 
+   // Create the css/ within the files folder.
+-  $path = 'public://ctools/css';
++  $path = 'public://ctools/css1';
+   if (!file_prepare_directory($path, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS)) {
+     drupal_set_message(t('Unable to create CTools CSS cache directory. Check the permissions on your files directory.'), 'error');
+     return;
+@@ -176,7 +176,7 @@ function ctools_css_cache($css, $filter = TRUE) {
+   // files with the same hash are identical content wise.
+   // If we rename, the cache folder can potentially fill up with thousands of
+   // files with the same content.
+-  $filename = file_unmanaged_save_data($css, $filename, FILE_EXISTS_REPLACE);
++  // $filename = file_unmanaged_save_data($css, $filename, FILE_EXISTS_REPLACE);
+ 
+   return $filename;
+ }
